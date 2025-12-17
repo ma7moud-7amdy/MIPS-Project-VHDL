@@ -7,7 +7,6 @@ entity ID_EX_Register is
         clk   : in std_logic;
         reset : in std_logic;
 
-        -- ******** ID Stage Inputs ********
         RegDst_ID      : in std_logic;
         RegWrite_ID    : in std_logic;
         ALUSrc_ID      : in std_logic;
@@ -25,7 +24,6 @@ entity ID_EX_Register is
         rt_ID          : in std_logic_vector(4 downto 0);
         rd_ID          : in std_logic_vector(4 downto 0);
 
-        -- ******** EX Stage Outputs ********
         RegDst_EX      : out std_logic;
         RegWrite_EX    : out std_logic;
         ALUSrc_EX      : out std_logic;
@@ -47,24 +45,28 @@ end ID_EX_Register;
 
 architecture Behavioral of ID_EX_Register is
 
-    -- Internal registers
-    signal RegDst_r, RegWrite_r, ALUSrc_r : std_logic;
-    signal ALUOp_r     : std_logic_vector(1 downto 0);
-    signal MemRead_r, MemWrite_r, MemToReg_r, Branch_r : std_logic;
+    signal RegDst_r    : std_logic := '0';
+    signal RegWrite_r  : std_logic := '0';
+    signal ALUSrc_r    : std_logic := '0';
+    signal ALUOp_r     : std_logic_vector(1 downto 0) := (others => '0');
+    signal MemRead_r   : std_logic := '0';
+    signal MemWrite_r  : std_logic := '0';
+    signal MemToReg_r  : std_logic := '0';
+    signal Branch_r    : std_logic := '0';
 
-    signal PC_4_r        : std_logic_vector(31 downto 0);
-    signal ReadData1_r   : std_logic_vector(31 downto 0);
-    signal ReadData2_r   : std_logic_vector(31 downto 0);
-    signal signExt_r     : std_logic_vector(31 downto 0);
+    signal PC_4_r        : std_logic_vector(31 downto 0) := (others => '0');
+    signal ReadData1_r   : std_logic_vector(31 downto 0) := (others => '0');
+    signal ReadData2_r   : std_logic_vector(31 downto 0) := (others => '0');
+    signal signExt_r     : std_logic_vector(31 downto 0) := (others => '0');
 
-    signal rt_r, rd_r    : std_logic_vector(4 downto 0);
+    signal rt_r          : std_logic_vector(4 downto 0)  := (others => '0');
+    signal rd_r          : std_logic_vector(4 downto 0)  := (others => '0');
 
 begin
 
     process(clk, reset)
     begin
         if reset = '1' then
-
             RegDst_r    <= '0';
             RegWrite_r  <= '0';
             ALUSrc_r    <= '0';
@@ -83,43 +85,40 @@ begin
             rd_r        <= (others => '0');
 
         elsif rising_edge(clk) then
+            RegDst_r    <= RegDst_ID;
+            RegWrite_r  <= RegWrite_ID;
+            ALUSrc_r    <= ALUSrc_ID;
+            ALUOp_r     <= ALUOp_ID;
+            MemRead_r   <= MemRead_ID;
+            MemWrite_r  <= MemWrite_ID;
+            MemToReg_r  <= MemToReg_ID;
+            Branch_r    <= Branch_ID;
 
-            -- Pass everything forward (pipeline)
-            RegDst_r     <= RegDst_ID;
-            RegWrite_r   <= RegWrite_ID;
-            ALUSrc_r     <= ALUSrc_ID;
-            ALUOp_r      <= ALUOp_ID;
-            MemRead_r    <= MemRead_ID;
-            MemWrite_r   <= MemWrite_ID;
-            MemToReg_r   <= MemToReg_ID;
-            Branch_r     <= Branch_ID;
+            PC_4_r      <= PC_4_ID;
+            ReadData1_r <= ReadData1_ID;
+            ReadData2_r <= ReadData2_ID;
+            signExt_r   <= signExtend_out_ID;
 
-            PC_4_r        <= PC_4_ID;
-            ReadData1_r   <= ReadData1_ID;
-            ReadData2_r   <= ReadData2_ID;
-            signExt_r     <= signExtend_out_ID;
-
-            rt_r          <= rt_ID;
-            rd_r          <= rd_ID;
+            rt_r        <= rt_ID;
+            rd_r        <= rd_ID;
         end if;
     end process;
 
-    -- Output assignments
-    RegDst_EX      <= RegDst_r;
-    RegWrite_EX    <= RegWrite_r;
-    ALUSrc_EX      <= ALUSrc_r;
-    ALUOp_EX       <= ALUOp_r;
-    MemRead_EX     <= MemRead_r;
-    MemWrite_EX    <= MemWrite_r;
-    MemToReg_EX    <= MemToReg_r;
-    Branch_EX      <= Branch_r;
+    RegDst_EX         <= RegDst_r;
+    RegWrite_EX       <= RegWrite_r;
+    ALUSrc_EX         <= ALUSrc_r;
+    ALUOp_EX          <= ALUOp_r;
+    MemRead_EX        <= MemRead_r;
+    MemWrite_EX       <= MemWrite_r;
+    MemToReg_EX       <= MemToReg_r;
+    Branch_EX         <= Branch_r;
 
-    PC_4_EX        <= PC_4_r;
-    ReadData1_EX   <= ReadData1_r;
-    ReadData2_EX   <= ReadData2_r;
+    PC_4_EX           <= PC_4_r;
+    ReadData1_EX      <= ReadData1_r;
+    ReadData2_EX      <= ReadData2_r;
     signExtend_out_EX <= signExt_r;
 
-    rt_EX          <= rt_r;
-    rd_EX          <= rd_r;
+    rt_EX             <= rt_r;
+    rd_EX             <= rd_r;
 
 end Behavioral;

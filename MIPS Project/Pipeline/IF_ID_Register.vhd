@@ -17,8 +17,8 @@ end IF_ID_Register;
 
 architecture Behavioral of IF_ID_Register is
 
-    signal PC_4_reg        : std_logic_vector(31 downto 0);
-    signal instruction_reg : std_logic_vector(31 downto 0);
+    signal PC_4_reg        : std_logic_vector(31 downto 0) := (others => '0');
+    signal instruction_reg : std_logic_vector(31 downto 0) := (others => '0');
 
 begin
 
@@ -29,7 +29,6 @@ begin
             instruction_reg <= (others => '0');
 
         elsif rising_edge(clk) then
-            -- Normal pipeline flow (no hazards)
             PC_4_reg        <= PC_4_IF;
             instruction_reg <= instruction_IF;
         end if;

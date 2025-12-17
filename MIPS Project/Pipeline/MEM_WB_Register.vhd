@@ -27,12 +27,12 @@ end MEM_WB_Register;
 
 architecture Behavioral of MEM_WB_Register is
 
-    -- Registers to hold the values
-    signal RegWrite_r, MemToReg_r : std_logic;
+    -- Registers to hold the values initialized to zero
+    signal RegWrite_r, MemToReg_r : std_logic := '0';
 
-    signal DMEM_data_r   : std_logic_vector(31 downto 0);
-    signal alu_result_r  : std_logic_vector(31 downto 0);
-    signal WriteReg_r    : std_logic_vector(4 downto 0);
+    signal DMEM_data_r   : std_logic_vector(31 downto 0) := (others => '0');
+    signal alu_result_r  : std_logic_vector(31 downto 0) := (others => '0');
+    signal WriteReg_r    : std_logic_vector(4 downto 0)  := (others => '0');
 
 begin
 
@@ -68,4 +68,3 @@ begin
     WriteRegister_WB <= WriteReg_r;
 
 end Behavioral;
- 

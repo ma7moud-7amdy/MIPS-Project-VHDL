@@ -17,7 +17,7 @@ architecture tb of Reg_Files_tb is
     signal ReadData2     : std_logic_vector(31 downto 0);
 
 begin
-    DUT: entity Reg_Files
+    DUT: entity work.Reg_Files
         port map (
             clk => clk,
             reset => reset,
