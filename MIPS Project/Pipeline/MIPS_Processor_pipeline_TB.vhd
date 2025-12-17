@@ -7,24 +7,31 @@ end entity;
 
 architecture Behavioral of MIPS_Processor_pipeline_tb is
 
-    signal clk   : std_logic := '0';
+    signal clk   : std_logic := '1';
     signal reset : std_logic := '0';
 
 begin
 
     -- Clock generation
     clk_process : process
-    begin
-        while true loop
-            clk <= '0';
-            wait for 10 ns;
-            clk <= '1';
-            wait for 10 ns;
-        end loop;
-    end process;
+	begin
+	    clk <= '1';
+	    wait for 10 ns;
+	    clk <= '0';
+	    wait for 10 ns;
+	end process;
+	
+	-- Add reset release process
+	--reset_process : process
+	--begin
+	  --  reset <= '1';
+	   -- wait for 25 ns;  -- Hold reset for more than one clock cycle
+	    --reset <= '0';
+	    --wait;
+	--end process;
 
     -- Instantiate MIPS Processor
-    uut: entity MIPS_Processor_pipeline
+    uut: entity work.MIPS_Processor_pipeline
         port map(
             clk => clk,
             reset => reset

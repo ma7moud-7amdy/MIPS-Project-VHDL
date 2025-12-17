@@ -1,0 +1,112 @@
+<config>
+    <version>
+        3.1
+    </version>
+    <comment>
+    </comment>
+    <databases>
+        <database id="">*virtual*</database>
+        <database id="5c60ba55dea157e3426951e8a4013c00">PiplineWaveform.asdb</database>
+    </databases>
+    <gridshown/>
+    <signallists>
+        <signallist id="0">
+        <signal>/MIPS_Processor_pipeline_tb/uut/clk</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/reset</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/alu_control_out</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/alu_inB</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/alu_result_EX</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/alu_result_MEM</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/alu_result_WB</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/alu_zero_EX</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/alu_zero_MEM</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/ALUOp_EX</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/ALUOp_ID</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/ALUSrc_EX</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/ALUSrc_ID</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/branch_address_EX</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/branch_address_MEM</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/Branch_EX</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/Branch_ID</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/Branch_MEM</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/branch_MUX_control</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/DMEM_dataOut_MEM</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/DMEM_dataOut_WB</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/funct</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/immediate</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/instruction_ID</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/instruction_IF</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/Jump</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/jump_address</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/jump_mux_out</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/MemRead_EX</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/MemRead_ID</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/MemRead_MEM</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/MemToReg_EX</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/MemToReg_ID</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/MemToReg_MEM</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/MemToReg_WB</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/MemWrite_EX</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/MemWrite_ID</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/MemWrite_MEM</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/opcode</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/PC_4_EX</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/PC_4_ID</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/PC_4_IF</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/PC_in</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/PC_out</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/rd_EX</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/rd_ID</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/ReadData1_EX</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/ReadData1_ID</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/ReadData2_EX</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/ReadData2_ID</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/ReadData2_MEM</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/RegDst_EX</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/RegDst_ID</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/RegWrite_EX</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/RegWrite_ID</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/RegWrite_MEM</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/RegWrite_WB</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/rs</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/rt_EX</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/rt_ID</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/signExtend_out_EX</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/signExtend_out_ID</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/signExtend_shifted</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/WriteData</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/WriteRegister_EX</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/WriteRegister_MEM</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/WriteRegister_WB</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/Reg_Files_component/registers</signal>
+        <signal>/MIPS_Processor_pipeline_tb/uut/Data_memory_component/Memory</signal>
+        </signallist>
+    </signallists>
+    <timebases>
+        <timebase id="0">
+            <time start_time="0" end_time="308644" />
+        </timebase>
+    </timebases>
+    <prefbases>
+        <prefbase id="0" >
+        </prefbase>
+    </prefbases>
+    <bookmarkbases>
+        <bookmarks id="0">
+        </bookmarks>
+    </bookmarkbases>
+    <cursorbases>
+        <cursors id="0">
+            <cursor value="600000" label="Cursor 1" locked="0" />
+        </cursors>
+    </cursorbases>
+    <measurementbases>
+    </measurementbases>
+    <commentbases>
+        <comments id="0">
+        </comments>
+    </commentbases>
+    <views>
+        <view signallist="0" propertybase="0" prefbase="0" type="1" bookmarks="0" cursors="0" measurements="-1" comments="-1" />
+    </views>
+</config>
